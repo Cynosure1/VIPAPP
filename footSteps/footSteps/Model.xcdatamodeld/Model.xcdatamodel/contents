@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D65" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="GraphNode" representedClassName="GraphNode" syncable="YES">
+        <attribute name="checkpoint" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="direction" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nodeID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="xCoordinate" optional="YES" attributeType="Integer 32" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="yCoordinate" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="edges" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GraphNode" inverseName="edges" inverseEntity="GraphNode" syncable="YES"/>
+        <relationship name="parentMap" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Map" inverseName="nodes" inverseEntity="Map" syncable="YES"/>
+    </entity>
+    <entity name="Map" representedClassName="Map" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="nodes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GraphNode" inverseName="parentMap" inverseEntity="GraphNode" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Map" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="GraphNode" positionX="-54" positionY="0" width="128" height="148"/>
+    </elements>
+</model>
